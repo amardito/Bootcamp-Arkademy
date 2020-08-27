@@ -39,7 +39,7 @@ router.put('/:arkaid', async (req, res, next) => {
 
 //delete specific promos
 router.delete('/:arkaid', async (req, res, next) => {
-  await Arka.remove({_id : req.params.arkaid})
+  await Arka.deleteOne({_id : req.params.arkaid})
   .then(result => {
       res.status(201).json(result);
   });
